@@ -1,0 +1,6 @@
+{
+    "serverPort": 3000,
+    "dbURl":"mongodb+srv://Burur1ch:Etern1ty@basecloud.5qsuku4.mongodb.net/?retryWrites=true&w=majority",
+    "secretKey": "Burur1ch",
+    "filePath":"Y:/After/Serv/files"
+}

@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+}
+.navbar__header {
+  margin-left: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #d20000 33%, #0D61BC 66%, #8AA9D6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+}
+.navbar__login {
+  margin-left: auto;
+  margin-right: 20px;
+  background: linear-gradient(45deg, #340000 33%, #0D61BC 66%, #eef5dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  font-size: 19px;
+}
+.navbar__registrat {
+  margin-left: auto;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.container {
+  width: 1140px;
+  display: flex;
+  align-items: center;
+}
+/*# sourceMappingURL=navbar.css.map */
