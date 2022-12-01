@@ -18,7 +18,7 @@
 }
 .registration__btn {
   border: none;
-  background-color: #566885;
+  background-color: #D8C3A5;
   border-radius: 8px;
   color: white;
   font-weight: 700;
@@ -26,4 +26,11 @@
   align-self: flex-end;
   margin-top: 10px;
 }
-/*# sourceMappingURL=registration.css.map */
+
+
+.registration__btn:hover{
+  background-color: red;
+  color: black;
+  transform: scale(1.05);
+  font-size: 14px;
+}

@@ -1,0 +1,242 @@
+.section4 {
+    position: absolute;
+height: 1000px;
+left: 0px;
+right: 0px;
+width: 100%;
+/* background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%) */
+}
+.pick {
+    position: absolute;
+height: 750px;
+left: 270px;
+right: 360px;
+top: 69px;
+width: 1200px;
+
+background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%);
+backdrop-filter: blur(2px);
+
+border-radius: 20px;
+}
+
+.pickhead {
+    display:flex;
+    position: absolute;
+width: 463px;
+height: 58px;
+left: calc(50% - 463px/2 + 1.5px);
+top: 40px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 120%;
+
+text-align: center;
+
+color: #000000;
+}
+
+.weknow {
+    position: absolute;
+width: 700px;
+
+left: calc(50% - 700px/2 );
+top: 130px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 120%;
+color: #333B41;
+}
+
+.howit {
+   
+    position: absolute;
+left: 35%;
+top: 220px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 130%;
+
+color: #333B41;
+}
+
+.card {
+box-sizing: border-box;
+position: absolute;
+width: 168px;
+height: 168px;
+/* left: 198px;
+top: 418px; */
+left: 220px;
+top: 320px;
+
+
+background: #FFFFFF;
+border-radius: 5px;
+}
+
+.card img {
+margin-left: 34px;
+margin-top: 34px;
+}
+
+.cardtext {
+    position: absolute;
+width: 168px;
+height: 46px;
+left: 225px;
+top: 495px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+color: #333B41;
+}
+
+.btn3t{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
+
+.vector img{
+    position: absolute;
+width: 69px;
+height: 35.08px;
+left: 420px;
+top: 390px;
+}
+
+.tree {
+    box-sizing: border-box;
+
+position: absolute;
+width: 168px;
+height: 168px;
+left: 530px;
+top: 320px;
+
+background: #FFFFFF;
+border-radius: 5px;
+}
+
+.tree img {
+    margin-left: 38px;
+    margin-top: 38px;
+}
+
+.zootext {
+    position: absolute;
+width: 168px;
+height: 46px;
+left: 535px;
+top: 495px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+
+color: #333B41;
+
+}
+
+.vector2 img{
+    position: absolute;
+width: 69px;
+height: 35.08px;
+left: 735px;
+top: 390px;
+}
+
+.monkey{
+    box-sizing: border-box;
+
+position: absolute;
+width: 168px;
+height: 168px;
+left: 850px;
+top: 320px;
+
+background: #FFFFFF;
+border-radius: 5px;
+}
+.monkey img {
+    margin-left: 34px;
+    margin-top: 34px;
+}
+
+.montext {
+    position: absolute;
+width: 168px;
+height: 46px;
+left: 850px;
+top: 495px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+
+color: #333B41;}
+
+
+.podch{
+    text-decoration: underline orange;
+    color: #111115;
+}
+
+.btn3 {
+    cursor: pointer;
+    position: absolute;
+    width: 298px;
+    height: 54px;
+left: 250px;
+top: 632px;
+border: 0px solid;
+background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+border-radius: 25px;
+}
+
+.btn4 {
+    cursor: pointer;
+    position: absolute;
+    width: 298px;
+    height: 54px;
+left: 680px;
+top: 632px;
+border: 0px solid;
+background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+border-radius: 25px;
+}
+
+.btn3:hover{
+    background: rgb(46, 46, 196);
+    color: black;
+}
+.btn4:hover{
+    background: rgb(46, 46, 196);
+    color: black;
+}
+.MyCloud{
+    color: red;
+}

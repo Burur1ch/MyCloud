@@ -11,10 +11,10 @@ const Login = () => {
     const dispatch = useDispatch()
     return (
         <div className='registration'>
-            <div className="registration__header">Autorize</div>
-            <Input value={email} setValue={setEmail} type="text" placeholder="Введите email..."/>
-            <Input value={password} setValue={setPassword} type="password" placeholder="Введите пароль..."/>
-            <button className="registration__btn" onClick={() => dispatch(login(email,password))}>Войти</button>
+            <div className="registration__header">Login</div>
+            <Input value={email} setValue={setEmail} type="text" placeholder="Enter email..."/>
+            <Input value={password} setValue={setPassword} type="password" placeholder="Enter password..."/>
+            <button className="registration__btn" onClick={() => dispatch(login(email,password))}>Enter</button>
         </div>
     );
 };

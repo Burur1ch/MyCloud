@@ -1,20 +1,70 @@
 .navbar {
   display: flex;
-  height: 50px;
+  height: 60px;
   justify-content: center;
-  background-color: white;
+  background-color: #D8C3A5;
   width: 100%;
+
 }
 .navbar__header {
   margin-left: 10px;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
-  background: linear-gradient(45deg, #d20000 33%, #0D61BC 66%, #8AA9D6);
+  background-color: #ff1100;
+  /* background: linear-gradient(45deg, #a10000 30%, #004cff); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none
+}
+.navbar__login {
+  margin-left: auto;
+  margin-right: 20px;
+  background-color: #000000;
+  /* background: linear-gradient(45deg, #ff8484 30%, #7ea5ff); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #0B2349;
+  font-size: 19px;
+  cursor: pointer;
+
 }
-.navbar__login {
+
+.navbar__registration {
+  background-color: #000000;
+  /* background: linear-gradient(45deg, #004cff 20%, #a10000); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  font-size: 19px;
+  cursor: pointer;
+  
+}
+
+.navbar__search {
+  width: 200px;
+  margin-left: 30px;
+
+}
+.navbar__logo{
+  width: 33px;
+  pointer-events: none
+}
+.container {
+  width: 1140px;
+  display: flex;
+  align-items: center;
+
+}
+
+.navbar__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+/* .navbar__login {
   margin-left: auto;
   margin-right: 20px;
   background: linear-gradient(45deg, #340000 33%, #0D61BC 66%, #eef5dc);
@@ -22,16 +72,4 @@
   -webkit-text-fill-color: transparent;
   color: #0B2349;
   font-size: 19px;
-}
-.navbar__registrat {
-  margin-left: auto;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.container {
-  width: 1140px;
-  display: flex;
-  align-items: center;
-}
-/*# sourceMappingURL=navbar.css.map */
+} */

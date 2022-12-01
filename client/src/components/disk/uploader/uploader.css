@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap');
+
+.uploader {
+    height:250px;
+    width: 350px;
+    position: fixed;
+    background-color: #D8C3A5;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    border-radius: 9px;
+    overflow-y: auto;
+    margin: 25px;
+    border: 2px solid black;
+  }
+  ::-webkit-scrollbar {
+    width: 16px; /* ширина для вертикального скролла */
+    height:7px; /* высота для горизонтального скролла */
+    background-color: #000000;
+    
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #e05656;
+    border-radius: 9em;
+    
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+    
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background:
+        linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+   
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background:
+        linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+    
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background:
+        linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+    
+}
+  .uploader__header {
+    display: flex;
+    justify-content: space-between;
+    
+    
+  }
+  .uploader__title {
+    color: #000000;
+    font-size: 1.2rem;
+    font-size: 24px;
+    font-family: 'Sono', sans-serif;
+  }
+  .uploader__close {
+    padding: 3px;
+    width: 30px;
+    color: white;
+    background-color: red;
+    font-size: 18px;
+  }
+
+  .uploader__close:hover{
+    transform: scale(1.02);
+    
+  }
+  .upload-file {
+    
+    background-color: #E9E6E6;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 5px 10px;
+  }
+  .upload-file__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .upload-file__progress-bar {
+    height: 1rem;
+    border-radius: 8px;
+    background-color: #566885;
+    display: flex;
+    margin: 3px 0;
+  }
+  .upload-file__upload-bar {
+    background-color: rgb(0, 184, 0);
+    border-radius: 8px;
+  }
+  .upload-file__percent {
+    color: #E9E6E6;
+    left: 46%;
+    position: absolute;
+  }
+  /*# sourceMappingURL=uploader.css.map */

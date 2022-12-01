@@ -1,0 +1,54 @@
+.filelist {
+  margin: 30px 0;
+}
+
+.loader1{
+  margin: 0;
+  font-size: 40px;
+}
+
+.Notfound{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+padding: 0;
+pointer-events: none;
+}
+
+.filelist__header {
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+}
+.filelist__name {
+  grid-column-start: 2;
+  font-size: 20px;
+}
+.filelist__date {
+  grid-column-start: 5;
+  justify-self: center;
+  font-size: 20px;
+}
+.filelist__size {
+  grid-column-start: 6;
+  justify-self: center;
+  font-size: 20px;
+}
+.fileplate {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.file-enter-active {
+  animation: file-enter 500ms forwards;
+}
+@keyframes file-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

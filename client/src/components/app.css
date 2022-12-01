@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #566885;
+  color: #000000;
 }
 body {
-  background-color: #E9E6E6;
+  background: rgb(216,195,165);
+  background: linear-gradient(90deg, rgba(216,195,165,1) 0%, rgba(233,213,184,1) 8%, rgba(246,231,209,1) 15%, rgba(234,231,220,1) 25%, rgba(234,231,220,1) 75%, rgba(246,231,209,1) 85%, rgba(231,213,187,1) 92%, rgba(216,195,165,1) 100%);
 }
 #root {
   width: 100%;
