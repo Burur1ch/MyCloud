@@ -6,11 +6,11 @@
 * And use it for your needs!)
 
 # Stack of this project
-    + ReactJS
-    + React-Router-Dom
-    + Axios
-    + CSS
-    + MongoDB
-    + NodeJS
-    + Express
+    ReactJS
+    React-Router-Dom
+    Axios
+    CSS
+    MongoDB
+    NodeJS
+    Express
     
