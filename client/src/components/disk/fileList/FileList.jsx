@@ -3,7 +3,7 @@ import './fileList.css'
 import {useSelector} from "react-redux";
 import File from "./file/File";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import NotFound from '/After/client/src/assets/img/Not.png'
+import NotFound from '../../../assets/img/Not.png'
 
 const FileList = () => {
 

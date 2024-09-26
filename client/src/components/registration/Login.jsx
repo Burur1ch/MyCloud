@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './registration.css'
 import {useDispatch} from 'react-redux'
 import Input from "../../utils/input/Input";
-import {login} from "/After/client/src/actions/user";
+import {login} from "../../actions/user";
 
 
 const Login = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import '/After/client/src/components/FirstPage/first.css'
-import regh from '/After/client/src/assets/img/100.png'
-import str from '/After/client/src/assets/img/Strel.png'
-import Done from '/After/client/src/assets/img/Done.png'
-import Add from '/After/client/src/assets/img/Add.png'
+import '../../components/FirstPage/first.css'
+import regh from '../../assets/img/100.png'
+import str from '../../assets/img/Strel.png'
+import Done from '../../assets/img/Done.png'
+import Add from '../../assets/img/Add.png'
 
 
 const First = () => {

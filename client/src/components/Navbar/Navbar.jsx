@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './navbar.css'
 import Logo from '../../assets/img/navbar-logo.png'
-import Avatar from '/After/client/src/assets/img/Avatar.svg'
+import Avatar from '../../assets/img/Avatar.svg'
 import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../../reducers/userReducer";
