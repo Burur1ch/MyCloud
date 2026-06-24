@@ -1,84 +1,63 @@
-import React from 'react';
-import '../../components/FirstPage/first.css'
-import regh from '../../assets/img/100.png'
-import str from '../../assets/img/Strel.png'
-import Done from '../../assets/img/Done.png'
-import Add from '../../assets/img/Add.png'
-
+import React from "react";
+import "../../components/FirstPage/first.css";
+import regh from "../../assets/img/100.png";
+import str from "../../assets/img/Strel.png";
+import Done from "../../assets/img/Done.png";
+import Add from "../../assets/img/Add.png";
+import { useNavigate } from "react-router-dom";
 
 const First = () => {
-    
+  const navigate = useNavigate();
 
-    function registration(){
-        window.location.assign('http://localhost:3001/registration');
-      };
-    function login(){
-        window.location.assign('http://localhost:3001/login');
-      };
+  return (
+    <div className="section4">
+      <div className="pick">
+        <div className="pickhead">
+          What is&nbsp;<div className="MyCloud">MY CLOUD</div>
+        </div>
+        <div className="weknow">
+          A personal cloud for your data, where your files are securely
+          protected. Save important documents and memories in our storage
+          facility.
+        </div>
+        <div className="howit">How to work with this?</div>
+        <div className="HOWITE">
+          <div className="card">
+            <img src={regh} alt="register" id="reg" className="reg" />
+          </div>
+          <div className="cardtext">
+            At first you need to register at MyCloud! Then log in!
+          </div>
+          <div className="vector">
+            <img src={str} alt="arrow" className="strel" />
+          </div>
 
-return(
+          <div className="tree">
+            <img src={Add} alt="add files" className="add" />
+          </div>
+          <div className="zootext">
+            In the next step you can add your files, then manage them in your
+            storage!
+          </div>
+          <div className="vector2">
+            <img src={str} alt="arrow" className="strel" />
+          </div>
 
-        
+          <div className="monkey">
+            <img src={Done} alt="done" className="done" />
+          </div>
+          <div className="montext">Done, enjoy using it!</div>
+        </div>
 
-        
-    <div class="section4">
-    <div class="pick">
-        <div class="pickhead">
-            What is&nbsp;<div className="MyCloud">MY CLOUD</div> 
-        </div>
-        <div class="weknow">
-            A personal cloud for your data, where your files are securely protected. Save important documents and memories in our storage facility.
-        </div>
-        <div class="howit">
-        How to work with this?
-        </div>
-    <div class="HOWITE">
-        <div class="card">
-        <img src={regh} alt="as" id='reg' className='reg'/>
-        </div>
-        <div class="cardtext">At first you need to register at MyCloud! Then log in! </div>
-        <div class="vector"><img src={str} alt="str" className='strel'/></div>
-
-        <div class="tree">
-        <img src={Add} alt="add" className='add'/>
-        </div>
-        <div class="zootext">In the next step you can add your files, then can manage them in your storage!</div>
-        <div class="vector2"><img src={str} alt="str" className='strel'/></div>
-
-        <div class="monkey">
-        <img src={Done} alt="done" className='done'/>
-        </div>
-        <div class="montext">Done, enjoy using it!</div>
-    </div>
-        
-        <button class="btn3" >
-            <div class="btn3t" onClick={()=>login()}>Get into your cloud!</div>
+        <button className="btn3" onClick={() => navigate("/login")}>
+          <div className="btn3t">Get into your cloud!</div>
         </button>
-        <button class="btn4" >
-            <div class="btn3t" onClick={()=>registration()}>Register now!</div>
+        <button className="btn4" onClick={() => navigate("/registration")}>
+          <div className="btn3t">Register now!</div>
         </button>
+      </div>
     </div>
-
-
-
-
-
-        {/* <div className="whats">
-         What is&nbsp;<div className="MyCloud">MY CLOUD</div> 
-        </div>
-        <div className="about">
-        A personal cloud of your data, where your files are protected.
-        </div>
- 
-        <button className="logmain" onClick={() => login()}>Login</button> 
-        <button className="regmain" onClick={() => registration()}>Registration</button>  */}
-
-
-        
-
-    </div>
-)
+  );
 };
 
 export default First;
-

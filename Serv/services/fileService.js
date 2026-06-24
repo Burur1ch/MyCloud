@@ -1,38 +1,35 @@
 const fs = require('fs')
-const File = require('../Model/File')
-const config = require('config')
+const path = require('path')
 
 class FileService {
+    getPath(file) {
+        return path.join(process.env.FILE_PATH, String(file.user), file.path)
+    }
 
     createDir(file) {
-        const filePath = `${config.get('filePath')}\\${file.user}\\${file.path}`
-        return new Promise(((resolve, reject) => {
+        const filePath = path.join(process.env.FILE_PATH, String(file.user), file.path)
+        return new Promise((resolve, reject) => {
             try {
                 if (!fs.existsSync(filePath)) {
-                    fs.mkdirSync(filePath)
-                    return resolve({message: 'File was created'})
+                    fs.mkdirSync(filePath, {recursive: true})
+                    return resolve({message: 'Directory was created'})
                 } else {
-                    return reject({message: "File already exist"})
+                    return reject({message: 'Directory already exists'})
                 }
             } catch (e) {
-                return reject({message: 'File error'})
+                return reject({message: 'File system error'})
             }
-        }))
+        })
     }
 
     deleteFile(file) {
-        const path = this.getPath(file)
+        const filePath = this.getPath(file)
         if (file.type === 'dir') {
-            fs.rmdirSync(path)
+            fs.rmSync(filePath, {recursive: true, force: true})
         } else {
-            fs.unlinkSync(path)
+            fs.unlinkSync(filePath)
         }
     }
-    //получение пути до файла
-    getPath(file) {
-        return config.get('filePath') + '\\' + file.user + '\\' + file.path
-    }
 }
-
 
 module.exports = new FileService()
