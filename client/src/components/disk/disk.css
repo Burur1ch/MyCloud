@@ -28,6 +28,13 @@
   cursor: pointer;
   transition: all 0.2s;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.disk__back:focus {
+  outline: none;
 }
 
 .disk__back img {
@@ -55,6 +62,14 @@
   color: rgba(255, 255, 255, 0.85);
   transition: all 0.2s;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.disk__create:focus,
+.disk__upload-label:focus {
+  outline: none;
 }
 
 .disk__create:hover,

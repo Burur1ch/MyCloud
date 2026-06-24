@@ -97,6 +97,7 @@
     border-color 0.2s,
     box-shadow 0.2s,
     background 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .auth-input:focus {
@@ -104,6 +105,7 @@
   background: #ffffff;
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
   transform: none;
+  outline: none;
 }
 
 .auth-input::placeholder {
@@ -159,6 +161,13 @@
   transition:
     transform 0.2s,
     box-shadow 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.auth-btn:focus {
+  outline: none;
 }
 
 .auth-btn:hover {

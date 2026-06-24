@@ -81,18 +81,7 @@
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 640px) {
   .filelist__header {
-    grid-template-columns: 40px 1fr auto;
-    padding: 10px 12px;
-  }
-  .filelist__name {
-    font-size: 11px;
-  }
-  .filelist__date {
     display: none;
-  }
-  .filelist__size {
-    grid-column-start: 3;
-    font-size: 11px;
   }
   .fileplate {
     gap: 12px;

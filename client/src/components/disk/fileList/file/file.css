@@ -14,6 +14,13 @@
   gap: 12px;
   cursor: pointer;
   transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.file:focus {
+  outline: none;
 }
 
 .file:hover {
@@ -57,6 +64,13 @@
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.file__btn:focus {
+  outline: none;
 }
 
 .file:hover .file__date {
@@ -97,84 +111,206 @@
 
 /* ── Plate view ───────────────────────────────────────── */
 .file-plate {
-  width: 140px;
-  height: 140px;
+  width: 150px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px;
+  padding: 18px 14px 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
-  border-radius: 12px;
+  border-radius: 14px;
   transition: all 0.2s;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.file-plate:focus {
+  outline: none;
 }
 
 .file-plate:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(167, 139, 250, 0.3);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .file-plate__img {
   width: 64px;
   height: 64px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.file-plate__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
 .file-plate__name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: block;
+  width: 100%;
+}
+
+.file-plate__size {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
 }
 
 .file-plate__btns {
   display: none;
   gap: 6px;
-  margin-top: 4px;
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
 }
 
 .file-plate:hover .file-plate__btns {
   display: flex;
 }
 
-.file-plate__download,
-.file-plate__delete {
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 600;
+.file-plate__btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
+  padding: 0;
+  border: 1px solid;
+}
+
+.file-plate__btn svg {
+  width: 16px;
+  height: 16px;
 }
 
 .file-plate__download {
   background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.3);
   color: #6ee7b7;
 }
 
 .file-plate__download:hover {
   background: rgba(16, 185, 129, 0.25);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .file-plate__delete {
   background: rgba(239, 68, 68, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-color: rgba(239, 68, 68, 0.3);
   color: #fca5a5;
 }
 
 .file-plate__delete:hover {
   background: rgba(239, 68, 68, 0.25);
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+/* ── Three-dot menu (mobile) ──────────────────────────── */
+.file-plate__menu-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.file-plate__menu-btn:focus {
+  outline: none;
+}
+
+.file-plate__menu-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.file-plate__dropdown {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  background: rgba(26, 26, 46, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 20;
+  min-width: 140px;
+}
+
+.file-plate__dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.file-plate__dropdown-item:focus {
+  outline: none;
+}
+
+.file-plate__dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.file-plate__dropdown-item--delete {
+  color: #fca5a5;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.file-plate__dropdown-item--delete:hover {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.file-plate__dropdown-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 /* ── Responsive ───────────────────────────────────────── */
@@ -256,15 +392,136 @@
   .file-plate__name {
     font-size: 11px;
   }
-  .file-plate__btns {
-    display: flex;
-    gap: 4px;
+  /* ── Responsive ───────────────────────────────────────── */
+  @media (max-width: 640px) {
+    /* List view - card layout */
+    .file {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+    }
+    .file:hover {
+      transform: none;
+    }
+    .file__img {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    /* Info block */
+    .file__info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .file__name {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .file__meta {
+      display: flex;
+      gap: 8px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+    .file__date::after {
+      content: "•";
+      margin-left: 8px;
+      color: rgba(255, 255, 255, 0.25);
+    }
+    .file__size {
+      font-size: 11px;
+    }
+
+    /* Hide old layout elements on mobile */
+    .file__date:not(.file__meta .file__date),
+    .file__size:not(.file__meta .file__size) {
+      display: none;
+    }
+
+    /* Action buttons - icons only */
+    .file__actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .file__btn {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border-radius: 8px;
+      font-size: 0;
+    }
+    .file__btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    .file__download {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+    }
+    .file__delete {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      color: #fca5a5;
+    }
+
+    /* Neutralise desktop hover states */
+    .file:hover .file__date {
+      grid-column-start: unset;
+    }
+    .file:hover .file__size {
+      grid-column-start: unset;
+    }
+    .file:hover .file__download {
+      grid-column-start: unset;
+    }
+    .file:hover .file__delete {
+      grid-column-start: unset;
+    }
+
+    /* Plate view */
+    .file-plate {
+      width: calc(50% - 6px);
+      min-width: 140px;
+      padding: 16px 12px 12px;
+    }
+    .file-plate__img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 10px;
+    }
+    .file-plate__name {
+      font-size: 12px;
+    }
+    .file-plate__size {
+      font-size: 10px;
+    }
+    /* Hide hover buttons on mobile */
+    .file-plate__btns {
+      display: none !important;
+    }
+    /* Show three-dot menu on mobile */
+    .file-plate__menu-btn {
+      display: flex;
+    }
+    .file-plate__dropdown {
+      right: 4px;
+      top: 36px;
+    }
   }
-  .file-plate__download,
-  .file-plate__delete {
-    display: block;
-    font-size: 9px;
-    padding: 4px 8px;
-  }
+  /*# sourceMappingURL=file.css.map */
 }
-/*# sourceMappingURL=file.css.map */

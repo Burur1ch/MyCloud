@@ -113,6 +113,13 @@
     box-shadow 0.18s;
   letter-spacing: 0.2px;
   line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.navbar__btn:focus {
+  outline: none;
 }
 
 .navbar__btn:hover {
