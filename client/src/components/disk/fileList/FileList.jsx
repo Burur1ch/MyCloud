@@ -6,7 +6,6 @@ import {CSSTransition, TransitionGroup} from "react-transition-group";
 import NotFound from '../../../assets/img/Not.png'
 
 const FileList = () => {
-
     const files = useSelector(state => state.files.files)
     const fileView = useSelector(state => state.files.view)
 
@@ -17,7 +16,7 @@ const FileList = () => {
             </div>
         )
     }
-
+    
     if (fileView === "plate") {
         return (
             <div className='fileplate'>

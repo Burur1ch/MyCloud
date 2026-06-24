@@ -1,13 +1,16 @@
-import React from 'react';
-import './input.css'
+import React from "react";
+import "./input.css";
 
-const Input = (props) => {
-    return (
-        <input onChange={(event)=> props.setValue(event.target.value)}
-               value={props.value}
-               type={props.type}
-               placeholder={props.placeholder}/>
-    );
+const Input = ({ value, setValue, type, placeholder, className = "" }) => {
+  return (
+    <input
+      className={`text-input ${className}`}
+      onChange={(e) => setValue(e.target.value)}
+      value={value}
+      type={type}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default Input;

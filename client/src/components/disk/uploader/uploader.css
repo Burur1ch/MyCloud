@@ -1,121 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap");
 
 .uploader {
-    height:250px;
-    width: 350px;
-    position: fixed;
-    background-color: #D8C3A5;
-    bottom: 0;
-    right: 0;
-    padding: 20px;
-    border-radius: 9px;
-    overflow-y: auto;
-    margin: 25px;
-    border: 2px solid black;
+  min-height: 120px;
+  max-height: 420px;
+  width: 380px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(26, 26, 46, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploader__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  flex-shrink: 0;
+}
+
+.uploader__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.uploader__close {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 7px;
+  color: #fca5a5;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.uploader__close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.35);
+  transform: scale(1.06);
+}
+
+/* Scrollable area */
+.uploader {
+  overflow-y: auto;
+}
+
+.uploader::-webkit-scrollbar {
+  width: 5px;
+}
+
+.uploader::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.uploader::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.3);
+  border-radius: 3px;
+}
+
+.uploader::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.5);
+}
+
+/* File cards */
+.upload-file {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition:
+    background 0.2s,
+    opacity 0.5s,
+    transform 0.5s,
+    max-height 0.5s;
+  opacity: 1;
+  transform: translateX(0);
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.upload-file.removing {
+  opacity: 0;
+  transform: translateX(20px);
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.upload-file:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.upload-file:last-child {
+  border-bottom: none;
+}
+
+.upload-file__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.upload-file__icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 8px;
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+.upload-file__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.upload-file__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-file__size {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.upload-file__status {
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.upload-file__percent {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a78bfa;
+  font-variant-numeric: tabular-nums;
+}
+
+.upload-file__complete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50%;
+  color: #6ee7b7;
+  font-size: 12px;
+}
+
+.upload-file__remove {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.upload-file__remove:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  transform: scale(1.06);
+}
+
+.upload-file__progress-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.upload-file__upload-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.4);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .uploader {
+    width: calc(100% - 24px);
+    max-height: 320px;
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    border-radius: 14px;
   }
-  ::-webkit-scrollbar {
-    width: 16px; /* ширина для вертикального скролла */
-    height:7px; /* высота для горизонтального скролла */
-    background-color: #000000;
-    
-}
-
-/* ползунок скроллбара */
-::-webkit-scrollbar-thumb {
-    background-color: #e05656;
-    border-radius: 9em;
-    
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #ffffff;
-}
-
-/* Стрелки */
-
-::-webkit-scrollbar-button:vertical:start:decrement {
-    background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #f6f8f4;
-    
-}
-
-::-webkit-scrollbar-button:vertical:end:increment {
-    background:
-        linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #f6f8f4;
-   
-}
-
-::-webkit-scrollbar-button:horizontal:start:decrement {
-    background:
-        linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #f6f8f4;
-    
-}
-
-::-webkit-scrollbar-button:horizontal:end:increment {
-    background:
-        linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #f6f8f4;
-    
-}
   .uploader__header {
-    display: flex;
-    justify-content: space-between;
-    
-    
+    padding: 14px 16px;
   }
   .uploader__title {
-    color: #000000;
-    font-size: 1.2rem;
-    font-size: 24px;
-    font-family: 'Sono', sans-serif;
-  }
-  .uploader__close {
-    padding: 3px;
-    width: 30px;
-    color: white;
-    background-color: red;
-    font-size: 18px;
-  }
-
-  .uploader__close:hover{
-    transform: scale(1.02);
-    
+    font-size: 15px;
   }
   .upload-file {
-    
-    background-color: #E9E6E6;
-    border-radius: 8px;
-    margin: 15px 0;
-    padding: 5px 10px;
+    padding: 12px 16px;
   }
-  .upload-file__header {
-    display: flex;
-    justify-content: space-between;
+  .upload-file__icon {
+    width: 32px;
+    height: 32px;
   }
-  .upload-file__progress-bar {
-    height: 1rem;
-    border-radius: 8px;
-    background-color: #566885;
-    display: flex;
-    margin: 3px 0;
+  .upload-file__icon svg {
+    width: 18px;
+    height: 18px;
   }
-  .upload-file__upload-bar {
-    background-color: rgb(0, 184, 0);
-    border-radius: 8px;
+  .upload-file__name {
+    font-size: 12px;
   }
-  .upload-file__percent {
-    color: #E9E6E6;
-    left: 46%;
-    position: absolute;
+  .upload-file__size {
+    font-size: 10px;
   }
-  /*# sourceMappingURL=uploader.css.map */
+}

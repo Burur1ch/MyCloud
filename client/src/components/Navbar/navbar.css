@@ -1,75 +1,213 @@
+/* ── Bar ──────────────────────────────────────────────── */
 .navbar {
   display: flex;
-  height: 60px;
+  height: 68px;
   justify-content: center;
-  background-color: #D8C3A5;
   width: 100%;
-
-}
-.navbar__header {
-  margin-left: 10px;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #ff1100;
-  /* background: linear-gradient(45deg, #a10000 30%, #004cff); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  pointer-events: none
-}
-.navbar__login {
-  margin-left: auto;
-  margin-right: 20px;
-  background-color: #000000;
-  /* background: linear-gradient(45deg, #ff8484 30%, #7ea5ff); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #0B2349;
-  font-size: 19px;
-  cursor: pointer;
-
+  background: rgba(10, 10, 35, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.navbar__registration {
-  background-color: #000000;
-  /* background: linear-gradient(45deg, #004cff 20%, #a10000); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #0B2349;
-  font-size: 19px;
-  cursor: pointer;
-  
-}
-
-.navbar__search {
-  width: 200px;
-  margin-left: 30px;
-
-}
-.navbar__logo{
-  width: 33px;
-  pointer-events: none
-}
 .container {
   width: 1140px;
   display: flex;
   align-items: center;
-
+  gap: 16px;
 }
 
-.navbar__avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+/* ── Brand ────────────────────────────────────────────── */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.navbar__logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
   pointer-events: none;
 }
 
-
-/* .navbar__login {
-  margin-left: auto;
-  margin-right: 20px;
-  background: linear-gradient(45deg, #340000 33%, #0D61BC 66%, #eef5dc);
+.navbar__title {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #a78bfa 0%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #0B2349;
-  font-size: 19px;
-} */
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── Search ───────────────────────────────────────────── */
+.navbar__search-wrap {
+  flex: 1;
+  max-width: 340px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 22px;
+  padding: 0 16px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar__search-wrap:focus-within {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(167, 139, 250, 0.55);
+  color: #a78bfa;
+}
+
+.navbar__search {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.navbar__search::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+/* ── Actions group ────────────────────────────────────── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── Button base ──────────────────────────────────────── */
+.navbar__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.18s,
+    opacity 0.18s,
+    background 0.18s,
+    box-shadow 0.18s;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.navbar__btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Ghost — Log in */
+.navbar__btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar__btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Primary — Sign up */
+.navbar__btn--primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.38);
+}
+
+.navbar__btn--primary:hover {
+  opacity: 0.88;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.55);
+}
+
+/* Logout */
+.navbar__btn--logout {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.65) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navbar__btn--logout:hover {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.28);
+  color: #fca5a5 !important;
+  -webkit-text-fill-color: #fca5a5;
+}
+
+/* ── Avatar ───────────────────────────────────────────── */
+.navbar__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  display: block;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.navbar__avatar:hover {
+  border-color: #a78bfa;
+  transform: scale(1.07);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    height: auto;
+    padding: 10px 0;
+  }
+  .container {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 14px;
+  }
+  .navbar__brand {
+    flex: 1;
+  }
+  .navbar__search-wrap {
+    order: 3;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .navbar__actions {
+    gap: 7px;
+  }
+  .navbar__btn {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+}

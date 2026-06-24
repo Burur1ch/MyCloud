@@ -1,60 +1,120 @@
 import React from "react";
 import "../../components/FirstPage/first.css";
-import regh from "../../assets/img/100.png";
-import str from "../../assets/img/Strel.png";
-import Done from "../../assets/img/Done.png";
-import Add from "../../assets/img/Add.png";
 import { useNavigate } from "react-router-dom";
 
 const First = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="section4">
-      <div className="pick">
-        <div className="pickhead">
-          What is&nbsp;<div className="MyCloud">MY CLOUD</div>
+    <div className="hero">
+      {/* Hero section */}
+      <div className="hero__content">
+        <div className="hero__badge">☁️ Personal Cloud Storage</div>
+        <h1 className="hero__title">
+          Your files,
+          <span className="hero__title-grad"> anywhere</span>
+          <br />
+          you go
+        </h1>
+        <p className="hero__desc">
+          Store, manage and access all your documents, photos and files from any
+          device — securely and instantly.
+        </p>
+        <div className="hero__actions">
+          <button
+            className="hero__btn hero__btn--primary"
+            onClick={() => navigate("/registration")}
+          >
+            Get started free
+          </button>
+          <button
+            className="hero__btn hero__btn--ghost"
+            onClick={() => navigate("/login")}
+          >
+            Sign in
+          </button>
         </div>
-        <div className="weknow">
-          A personal cloud for your data, where your files are securely
-          protected. Save important documents and memories in our storage
-          facility.
+      </div>
+
+      {/* Steps section */}
+      <div className="steps">
+        <p className="steps__label">How it works</p>
+        <h2 className="steps__title">Three steps to your cloud</h2>
+        <div className="steps__list">
+          <div className="steps__connector" />
+          {[
+            {
+              num: "01",
+              icon: "👤",
+              name: "Create account",
+              text: "Register in seconds and get 8 GB of personal cloud space for free",
+            },
+            {
+              num: "02",
+              icon: "📤",
+              name: "Upload files",
+              text: "Drag & drop or browse — any format, any size",
+            },
+            {
+              num: "03",
+              icon: "✨",
+              name: "Enjoy",
+              text: "Access, share and manage your files from any device, anytime",
+            },
+          ].map((s) => (
+            <div className="steps__item" key={s.num}>
+              <div className="steps__bubble">
+                <span className="steps__bubble-icon">{s.icon}</span>
+              </div>
+              <div className="steps__num">{s.num}</div>
+              <div className="steps__name">{s.name}</div>
+              <div className="steps__text">{s.text}</div>
+            </div>
+          ))}
         </div>
-        <div className="howit">How to work with this?</div>
-        <div className="HOWITE">
-          <div className="card">
-            <img src={regh} alt="register" id="reg" className="reg" />
-          </div>
-          <div className="cardtext">
-            At first you need to register at MyCloud! Then log in!
-          </div>
-          <div className="vector">
-            <img src={str} alt="arrow" className="strel" />
-          </div>
+      </div>
 
-          <div className="tree">
-            <img src={Add} alt="add files" className="add" />
+      {/* Features section */}
+      <div className="feats">
+        {[
+          {
+            icon: "🔒",
+            grad: "#667eea,#764ba2",
+            title: "Secure",
+            text: "Your files are visible only to you. No one else can access your personal storage",
+          },
+          {
+            icon: "⚡",
+            grad: "#f093fb,#f5576c",
+            title: "Fast",
+            text: "Files upload in seconds. Watch the progress bar and get on with your day",
+          },
+          {
+            icon: "🌐",
+            grad: "#4facfe,#00f2fe",
+            title: "Anywhere",
+            text: "Open your cloud from a phone, tablet or laptop — everything is always in sync",
+          },
+          {
+            icon: "📁",
+            grad: "#43e97b,#38f9d7",
+            title: "Organised",
+            text: "Create folders, sort by name or date, and find any file in seconds with search",
+          },
+        ].map((f) => (
+          <div className="feats__card" key={f.title}>
+            <div
+              className="feats__icon"
+              style={{ background: `linear-gradient(135deg, ${f.grad})` }}
+            >
+              {f.icon}
+            </div>
+            <div className="feats__body">
+              <div className="feats__title">{f.title}</div>
+              <div className="feats__text">{f.text}</div>
+            </div>
           </div>
-          <div className="zootext">
-            In the next step you can add your files, then manage them in your
-            storage!
-          </div>
-          <div className="vector2">
-            <img src={str} alt="arrow" className="strel" />
-          </div>
-
-          <div className="monkey">
-            <img src={Done} alt="done" className="done" />
-          </div>
-          <div className="montext">Done, enjoy using it!</div>
-        </div>
-
-        <button className="btn3" onClick={() => navigate("/login")}>
-          <div className="btn3t">Get into your cloud!</div>
-        </button>
-        <button className="btn4" onClick={() => navigate("/registration")}>
-          <div className="btn3t">Register now!</div>
-        </button>
+        ))}
       </div>
     </div>
   );

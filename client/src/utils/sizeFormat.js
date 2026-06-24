@@ -9,4 +9,5 @@ export default (size) => {
         return (size/(1024)).toFixed(1)+"Kb"
     }
     return size+"B"
+    
 }

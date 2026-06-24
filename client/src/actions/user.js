@@ -3,16 +3,21 @@ import { setUser } from "../reducers/userReducer";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export const registration = async (email, password) => {
-  try {
-    const response = await axios.post(`${API_URL}/api/auth/registration`, {
-      email,
-      password,
-    });
-    alert(response.data.message);
-  } catch (e) {
-    alert(e.response.data.message);
-  }
+export const registration = (email, password) => {
+  return async (dispatch) => {
+    try {
+      await axios.post(`${API_URL}/api/auth/registration`, { email, password });
+      // auto-login right after successful registration
+      const loginRes = await axios.post(`${API_URL}/api/auth/login`, {
+        email,
+        password,
+      });
+      dispatch(setUser(loginRes.data.user));
+      localStorage.setItem("token", loginRes.data.token);
+    } catch (e) {
+      throw new Error(e.response?.data?.message || "Something went wrong");
+    }
+  };
 };
 
 export const login = (email, password) => {
@@ -25,7 +30,7 @@ export const login = (email, password) => {
       dispatch(setUser(response.data.user));
       localStorage.setItem("token", response.data.token);
     } catch (e) {
-      alert(e.response.data.message);
+      throw new Error(e.response?.data?.message || "Something went wrong");
     }
   };
 };

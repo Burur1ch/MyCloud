@@ -4,6 +4,8 @@ import {
   addUploadFile,
   changeUploadFile,
   showUploader,
+  removeUploadFile,
+  hideUploader,
 } from "../reducers/uploadReducer";
 import { hideLoader, showLoader } from "../reducers/appReducer";
 
@@ -51,13 +53,19 @@ export function createDir(dirId, name) {
 }
 
 export function uploadFile(file, dirId) {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
       if (dirId) formData.append("parent", dirId);
 
-      const uploadEntry = { name: file.name, progress: 0, id: Date.now() };
+      const uploadFileId = Date.now();
+      const uploadEntry = {
+        name: file.name,
+        size: file.size,
+        progress: 0,
+        id: uploadFileId,
+      };
       dispatch(showUploader());
       dispatch(addUploadFile(uploadEntry));
 
@@ -68,15 +76,24 @@ export function uploadFile(file, dirId) {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           onUploadProgress: (progressEvent) => {
             if (progressEvent.total) {
-              uploadEntry.progress = Math.round(
+              const progress = Math.round(
                 (progressEvent.loaded * 100) / progressEvent.total,
               );
-              dispatch(changeUploadFile(uploadEntry));
+              dispatch(changeUploadFile({ id: uploadFileId, progress }));
             }
           },
         },
       );
       dispatch(addFile(response.data));
+
+      // Auto-hide uploader after 5 seconds
+      setTimeout(() => {
+        dispatch(removeUploadFile(uploadFileId));
+        const state = getState();
+        if (state.upload.files.length <= 1) {
+          dispatch(hideUploader());
+        }
+      }, 5000);
     } catch (e) {
       alert(e?.response?.data?.message);
     }
