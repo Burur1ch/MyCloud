@@ -59,40 +59,14 @@ const File = ({ file }) => {
           alt=""
           className="file__img"
         />
-        <div className="file__info">
-          <div className="file__name">{file.name}</div>
-          <div className="file__meta">
-            <span className="file__date">{file.date.slice(0, 10)}</span>
-            <span className="file__size">{sizeFormat(file.size)}</span>
-          </div>
-        </div>
-        <div className="file__actions">
-          {file.type !== "dir" && (
-            <button
-              onClick={(e) => downloadClickHandler(e)}
-              className="file__btn file__download"
-              title="Download"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </button>
-          )}
+        <div className="file__name">{file.name}</div>
+        <div className="file__date">{file.date.slice(0, 10)}</div>
+        <div className="file__size">{sizeFormat(file.size)}</div>
+        {file.type !== "dir" && (
           <button
-            onClick={(e) => deleteClickHandler(e)}
-            className="file__btn file__delete"
-            title="Delete"
+            onClick={(e) => downloadClickHandler(e)}
+            className="file__btn file__download"
+            title="Download"
           >
             <svg
               width="18"
@@ -104,11 +78,31 @@ const File = ({ file }) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <polyline points="3 6 5 6 21 6" />
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
           </button>
-        </div>
+        )}
+        <button
+          onClick={(e) => deleteClickHandler(e)}
+          className="file__btn file__delete"
+          title="Delete"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="3 6 5 6 21 6" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+          </svg>
+        </button>
       </div>
     );
   }
